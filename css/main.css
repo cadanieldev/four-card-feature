@@ -8,12 +8,149 @@ ul {
   list-style: none;
 }
 
+img {
+  max-width: 100%;
+}
+
+
 body {
   display: flex;
   align-items: center;
   min-height: 100vh;
-  background: var(--White);
+  background: #fafafa;
   font-family: var(--font-poppins);
 }
 
-/* MAIN */
+/* HERO/CONTAINER */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1440px;
+  text-align: center;
+}
+
+.hero-content {
+  margin: 0 auto;
+}
+
+.title-one {
+  font-family: var(--font-poppins);
+  color: var(--Grey-400);
+  font-weight: 200;
+  font-size: 2rem;
+}
+
+.title-two {
+  font-family: var(--font-poppins);
+  color: var(--Grey-500);
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.hero-content section .text {
+  color: var(--Grey-400);
+  font-weight: 400;
+  font-size: .937rem;
+  max-width: 55ch;
+  margin: 1rem 0;
+}
+
+/* MAIN-CONTENT */
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.content {
+  background: var(--White);
+}
+
+.content.super {
+  border-top: 4px solid var(--Cyan);
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.content.builder  {
+  border-top: 4px solid var(--Red);
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.content.karma {
+  border-top: 4px solid var(--Orange);
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.content.calculator {
+  border-top: 4px solid var(--Blue);
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.content {
+  max-width: 28.75rem;
+  background: var(--White);
+  padding: 1.5rem;
+  border-radius: 4px 4px 8px 8px;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.content section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content h3 {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  color: var(--Grey-500);
+}
+
+.content p {
+  font-size: .937rem;
+  color: var(--Grey-400);
+  font-weight: 400;
+  max-width: 35ch;
+  margin-top: .875rem;
+}
+
+.content img {
+  display: block;
+  margin-left: auto;
+  margin-top: 3rem;
+  margin-right: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .title-one, .title-two {
+    font-size: 1.5rem;
+  }
+  .hero-content section .text {
+    text-align: center;
+    max-width: 34ch;
+  }
+  .content {
+    max-width: 20rem;
+  }
+}
